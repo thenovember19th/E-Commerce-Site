@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Simple E-commerce</title>
+  <style media="screen">
+    .footer{
+      position: fixed;
+    }
+  </style>
+</head>
+
+<body style="background-color:#26beb9;">
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %}
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+  <br><br><br>
+<h3 style="text-align:center;">"Welcome to our simple ecommerce site, where your shopping dreams come true! We offer a curated selection of high-quality products at unbeatable prices. Our mission is to provide a seamless shopping experience, from browsing to checkout. With a focus on customer satisfaction, we guarantee fast shipping, secure payments, and exceptional customer service. Discover the best deals and latest trends right here. Happy shopping!" </h3>
+<br><br><br><br><br><br><br><br><br><br><br>
+  {% include "ecom/footer.html" %}
+</body>
+
+</html>
